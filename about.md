@@ -12,4 +12,4 @@ haha
 
 ### Contact me
 
-[xionghuan.cn@gmail.com](mailto:xionghuan.cn@gmail.com)
+[aa.cn@gmail.com](mailto:aa.cn@gmail.com)
