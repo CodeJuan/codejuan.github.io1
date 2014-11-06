@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Codemonkey
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself. 
+haha
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[xionghuan.cn@gmail.com](mailto:xionghuan.cn@gmail.com)
