@@ -16,7 +16,7 @@ title: 优化草稿
 循环2与3，直至处理完全部文件。
 随手画下流程图，家里电脑没有合适的工具，将就着画吧。
 
-![](http://www.decbug.com/wp-content/uploads/2014/05/%E6%97%A0%E6%A0%87%E9%A2%98-270x300.png)
+![](https://raw.githubusercontent.com/CodeJuan/codejuan.github.io/master/images/blog/draft_optimize/workflow1.png)
 
 ### 现状
 如前文所示，业务模块是串行处理，CPU利用率25%，偶尔在会到80% 以上，利用不够充分。由于windows32位单个进程只能用4G内存，其中内核2G，用户只能使用2G。目前已出现内存不足的情况（new申请内存失败），当数据继续膨胀，2G内存必然远不够用。业务模块的代码不够规范，内存泄漏比较多，影响到整体运行。
@@ -28,4 +28,4 @@ title: 优化草稿
 - 每个业务件都是一个进程，都可用2G内存，可以容纳更大的数据，并且不会互相干扰。
 - 增加一个数据层，将框架层与业务层隔离。
 
-![](http://www.decbug.com/wp-content/uploads/2014/05/%E6%97%A0%E6%A0%87%E9%A2%98.2png-300x251.png)
+![](https://raw.githubusercontent.com/CodeJuan/codejuan.github.io/master/images/blog/draft_optimize/workflow2.png)
