@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 优化草稿
+title: TestCodeHighLight
 ---
 
 
@@ -8,4 +8,13 @@ title: 优化草稿
 def foo  
   puts 'foo'  
 end  
+{% endhighlight %}  
+
+
+{% highlight cpp %}  
+void main()
+{
+	int a = 0;
+	return;
+}
 {% endhighlight %}  
