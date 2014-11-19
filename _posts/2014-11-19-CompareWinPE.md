@@ -19,16 +19,28 @@ typedef struct _IMAGE_NT_HEADERS {
 {% endhighlight %}  
 
 
-其中FileHeader的定义是
+其中FileHeader的定义是，第三个变量就是时间戳，表示文件的创建时间。
 
 {% highlight cpp %} 
 typedef struct _IMAGE_FILE_HEADER {  
     WORD    Machine;  
     WORD    NumberOfSections;  
-    DWORD   `timeDateStamp`;  //timeDateStamp
+    DWORD   timeDateStamp;  //timeDateStamp
     DWORD   PointerToSymbolTable;  
     DWORD   NumberOfSymbols;  
     WORD    SizeOfOptionalHeader;  
     WORD    Characteristics;  
 } IMAGE_FILE_HEADER, *PIMAGE_FILE_HEADER;
+{% endhighlight %}  
+
+再来看看所谓的可选头OptionalHeader，其实一点都不可选，里边藏了好多东西，CheckSum也会导致DLL差异。  
+
+{% highlight cpp %} 
+typedef struct _IMAGE_OPTIONAL_HEADER {  
+    WORD    Magic;     
+    //...
+    DWORD   CheckSum;  //CheckSum
+    //...
+    IMAGE_DATA_DIRECTORY DataDirectory[IMAGE_NUMBEROF_DIRECTORY_ENTRIES];  
+} IMAGE_OPTIONAL_HEADER32, *PIMAGE_OPTIONAL_HEADER32;  
 {% endhighlight %}  
