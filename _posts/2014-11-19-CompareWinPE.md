@@ -33,7 +33,7 @@ typedef struct _IMAGE_FILE_HEADER {
 } IMAGE_FILE_HEADER, *PIMAGE_FILE_HEADER;
 {% endhighlight %}  
 
-再来看看所谓的可选头OptionalHeader，其实一点都不可选，里边藏了好多东西，CheckSum也会导致DLL差异。  
+再来看看所谓的可选头OptionalHeader，其实一点都不可选，里边藏了好多东西，其中的CheckSum也会导致DLL差异。  
 
 {% highlight cpp %} 
 typedef struct _IMAGE_OPTIONAL_HEADER {  
@@ -44,3 +44,58 @@ typedef struct _IMAGE_OPTIONAL_HEADER {
     IMAGE_DATA_DIRECTORY DataDirectory[IMAGE_NUMBEROF_DIRECTORY_ENTRIES];  
 } IMAGE_OPTIONAL_HEADER32, *PIMAGE_OPTIONAL_HEADER32;  
 {% endhighlight %}  
+
+## 去除TimeStamp
+既然时间戳确实存在，那么只能想办法在比较的时候忽略时间戳，或是在比较之前去除之。秉承一贯不重复造轮子的作风，先google一下是否有解决方案。
+
+### BinDiff
+微软大力推荐的BinDiff，可惜找了一大圈都没找到下载源，网上另有说法是BinDiff属于商用软件，license很贵。只能放弃，另寻他法。
+
+### dumpbin /rawdata
+VS2010自带了将PE文件导出的工具Dumpbin，据说可以将PE文件导出来。需要注意的是，不能直接在`CMD里输入dumpbin`，会提示找不到某个DLL，必须在开始菜单-VS2010-Tools-prompt里打开。区别在于tools里会先调用一个bat环境变量。
+用法
+
+> dumpbin /rawdata 1.dll 1.txt
+> dumpbin /rawdata 2.dll 2.txt
+
+用BeyondCompare比较1.txt和2.txt，发现差异还是在TimeStamp处，看来此法不通。
+
+### dumpbin /disasm
+查看dumpbin命令
+
+>     /ALL  
+      /ARCHIVEMEMBERS  
+      /CLRHEADER  
+      /DEPENDENTS  
+      /DIRECTIVES  
+      /DISASM[:{BYTES|NOBYTES}]  
+      /ERRORREPORT:{NONE|PROMPT|QUEUE|SEND}  
+      /EXPORTS  
+      /FPO  
+      /HEADERS  
+      /IMPORTS[:文件名]  
+      /LINENUMBERS  
+      /LINKERMEMBER[:{1|2}]  
+      /LOADCONFIG  
+      /OUT:文件名  
+      /PDATA  
+      /PDBPATH[:VERBOSE]  
+      /RANGE:vaMin[,vaMax]  
+      /RAWDATA[:{NONE|1|2|4|8}[,#]]  
+      /RELOCATIONS  
+      /SECTION:名称  
+      /SUMMARY  
+      /SYMBOLS  
+      /TLS  
+      /UNWINDINFO   
+
+其中有个disasm，看着像反汇编。如果能把PE反汇编出来，应该就能把TimeStamp去掉。
+
+> dumpbin /disasm 1.dll 1.txt
+> dumpbin /disasm 2.dll 2.txt
+
+比较1.txt和2.txt果然一致。
+
+## 后续
+需要写一个bat，输入参数为两个文件夹的路径，将这两个文件夹内的PE文件都反汇编出来，然后一一进行比较，输出有差异的文件名。
+
