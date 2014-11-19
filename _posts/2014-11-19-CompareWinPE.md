@@ -56,6 +56,7 @@ VS2010自带了将PE文件导出的工具Dumpbin，据说可以将PE文件导出
 用法
 
 > dumpbin /rawdata 1.dll 1.txt
+
 > dumpbin /rawdata 2.dll 2.txt
 
 用BeyondCompare比较1.txt和2.txt，发现差异还是在TimeStamp处，看来此法不通。
@@ -92,6 +93,7 @@ VS2010自带了将PE文件导出的工具Dumpbin，据说可以将PE文件导出
 其中有个disasm，看着像反汇编。如果能把PE反汇编出来，应该就能把TimeStamp去掉。
 
 > dumpbin /disasm 1.dll 1.txt
+
 > dumpbin /disasm 2.dll 2.txt
 
 比较1.txt和2.txt果然一致。
