@@ -10,17 +10,18 @@ comments: true
 ## 过程
 我曾看过windows的PE文件结构，依稀记得里边会有几个字节存放TimeStamp和CheckSum，所以会有这么几个字节的差异。为避免误人子弟，特找来微软的定义看看：
 
-{% highlight cpp  %}
+{% highlight cpp %} 
 typedef struct _IMAGE_NT_HEADERS {  
     DWORD Signature;  
     IMAGE_FILE_HEADER FileHeader;  
     IMAGE_OPTIONAL_HEADER32 OptionalHeader;  
 } IMAGE_NT_HEADERS32, *PIMAGE_NT_HEADERS32;
-{ endhighlight }
+{% endhighlight %}  
+
 
 其中FileHeader的定义是
 
-{% highlight cpp  %}
+{% highlight cpp %} 
 typedef struct _IMAGE_FILE_HEADER {  
     WORD    Machine;  
     WORD    NumberOfSections;  
@@ -30,4 +31,4 @@ typedef struct _IMAGE_FILE_HEADER {
     WORD    SizeOfOptionalHeader;  
     WORD    Characteristics;  
 } IMAGE_FILE_HEADER, *PIMAGE_FILE_HEADER;
-{ endhighlight }
+{% endhighlight %}  
