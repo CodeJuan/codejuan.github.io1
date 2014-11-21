@@ -19,3 +19,12 @@ void main()
 	return;
 }
 {% endhighlight %}  
+
+
+``` cpp
+void main()
+{
+	int a = 0;
+	return;
+}
+```
