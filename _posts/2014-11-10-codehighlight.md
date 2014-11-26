@@ -4,6 +4,9 @@ title: TestCodeHighLight
 comments: true
 ---
 
+### Abstract
+Test code highlighter: pygments
+
 
 {% highlight ruby %}  
 def foo  
