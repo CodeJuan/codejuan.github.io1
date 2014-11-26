@@ -9,7 +9,6 @@ comments: true
 
 ### GCC
 从代码到可执行文件，会经历四个阶段，对应的命令是
-
 > gcc -E  test.c -o test.i 中间文件
 
 > gcc -S test.i -o test.s  ASM
@@ -52,35 +51,35 @@ main()
 }
 {% endhighlight %}
 
-> gcc -g -o test test.c
+> gcc -g -o test test.c     -g表示gdb
 
-> gdb ./test
+> gdb ./test                用gdb打开
 
-> l
+> l                         显示代码
 
-> b linenum
+> b linenum                 给指定行号价断点 bp
 
-> b function_name
+> b function_name           给函数加断点 bp
 
-> i b
+> i b                       info breakpoint显示断点，类似于windbg的bl
 
-> r
+> r                         run
 
-> n
+> n                         next
 
-> p var_name
+> p var_name                显示变量的值
 
-> step
+> step                      下一行
 
-> info locals
+> info locals               显示local
 
-> watch i
+> watch i                   watch某变量
 
-> d 1
+> d 1                       delete breakpoint 1
 
-> c
+> c                         continue
 
-> q
+> q                         quit
 
 ### conclusion
-还是要多写呃，拳不离手，曲不离口。。。。
+还是要得写几段代码玩呃，拳不离手，曲不离口。。。。
