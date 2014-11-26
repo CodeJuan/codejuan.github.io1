@@ -1,3 +1,3 @@
 [MyBlog](http://decbug.com)
 [@codejuan](https://github.com/CodeJuan)
-![](https://github.com/CodeJuan/codejuan.github.io/blob/master/images/404.jpg)
+![](http://tp1.sinaimg.cn/2673074772/180/22853480827/1)
