@@ -51,35 +51,50 @@ main()
 }
 {% endhighlight %}
 
-> gcc -g -o test test.c     -g表示gdb
+> gcc -g -o test test.c     
+>> -g表示gdb
 
-> gdb ./test                用gdb打开
+> gdb ./test                
+>> 用gdb打开
 
-> l                         显示代码
+> l                         
+>> 显示代码
 
-> b linenum                 给指定行号价断点 bp
+> b linenum                 
+>> 给指定行号价断点 bp
 
-> b function_name           给函数加断点 bp
+> b function_name           
+>> 给函数加断点 bp
 
-> i b                       info breakpoint显示断点，类似于windbg的bl
+> i b                       
+>> info breakpoint显示断点，类似于windbg的bl
 
-> r                         run
+> r                         
+>> run
 
-> n                         next
+> n                         
+>> next
 
-> p var_name                显示变量的值
+> p var_name                
+>> 显示变量的值
 
-> step                      下一行
+> step                      
+>> 下一行
 
-> info locals               显示local
+> info locals               
+>> 显示local
 
-> watch i                   watch某变量
+> watch i                   
+>> watch某变量
 
-> d 1                       delete breakpoint 1
+> d 1                       
+>> delete breakpoint 1
 
-> c                         continue
+> c                         
+>> continue
 
-> q                         quit
+> q                         
+>> quit
 
 ### conclusion
 还是要得写几段代码玩呃，拳不离手，曲不离口。。。。
