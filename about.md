@@ -21,7 +21,5 @@ permalink: /about/
 
 [twitter](http://twitter.com/decbug)
 
-[weibo](http://weibo.com/decbug)
-
 [mail](mailto:xh@decbug.com)
 
