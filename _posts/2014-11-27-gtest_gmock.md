@@ -20,3 +20,20 @@ comments: true
 
 1.7版本还是支持make的，cd到make文件夹，然后make即可。
 
+以gtest为例，会在make目录生成一个库文件，以及一个测试可执行文件`sample1_unittest`。
+
+执行`sample1_unittest`
+
+{% highlight sh %}
+Running main() from gtest_main.cc
+[==========] Running 6 tests from 2 test cases.
+[----------] Global test environment set-up.
+[----------] 3 tests from FactorialTest
+[ RUN      ] FactorialTest.Negative
+[       OK ] FactorialTest.Negative (0 ms)
+[ RUN      ] FactorialTest.Zero
+[       OK ] FactorialTest.Zero (0 ms)
+[ RUN      ] FactorialTest.Positive
+[       OK ] FactorialTest.Positive (0 ms)
+[----------] 3 tests from FactorialTest (0 ms total)
+{% endhighlight %}
