@@ -7,7 +7,7 @@ title: CodeJuan
   {% for post in site.posts %}
     <article class="post">    
       
-      <h6><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h6>
+      <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
 
       <!--<div class="entry">
         {{ post.content | truncatewords:4}}
@@ -16,7 +16,7 @@ title: CodeJuan
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>-->
       
       <div class="date">
-        Written on {{ post.date | date: "%B %e, %Y" }}
+        <h6><a {{ post.date | date: "%Y-%B-%e" }}</a></h6>
       </div>
       
     </article>
