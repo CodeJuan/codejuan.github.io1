@@ -19,7 +19,11 @@ comments: true
 8. gtest gmock的runtime lib都改为/mdd
 
 #### 果然可以
+
 效果如图
+
+![](https://github.com/CodeJuan/codejuan.github.io/raw/master/images/blog/ut_migrate/UT_gtest.png)
+
 
 ## powershell 脚本
 说白了就是用脚本处理vcxproj(其实就xml)，把上文提到的几个步骤都用脚本实现。
