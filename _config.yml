@@ -32,8 +32,8 @@ footer-links:
 # Your disqus shortname, entering this will enable commenting on posts
 disqus: CodeJuan
 
-# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics: UA-57346409-1
+# Enter your Google Analytics web tracking code (e.g. UA-57346409-1) to activate tracking
+google_analytics: 
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
