@@ -1,34 +1,34 @@
 ---
 layout: post
-title: ä¸€é”®å¼ç»™VCå·¥ç¨‹åˆ›å»ºUTå·¥ç¨‹
+title: Ò»¼üÊ½¸øVC¹¤³Ì´´½¨UT¹¤³Ì
 comments: true
 ---
 
-## å‰è¨€
-é¡¹ç›®ç»„è¦æ±‚ç»™å·²æœ‰çš„å‡ åä¸ªVCå·¥ç¨‹æ·»åŠ é…å¥—çš„UTå·¥ç¨‹ï¼Œéœ€è¦è¦†ç›–åˆ°æ¯ä¸ªç±»(å³æ¯ä¸ªCPPéƒ½è¦æœ‰å¯¹åº”çš„TEST)ã€‚ç®€å•è§‚å¯Ÿäº†ä¸€ä¸‹ï¼Œè¿˜æ˜¯é€‰ç”¨add existing item to projectæ·»åŠ .cpp.hçš„æ–¹æ³•æœ€ä¸ºç®€å•ã€‚
+## Ç°ÑÔ
+ÏîÄ¿×éÒªÇó¸øÒÑÓĞµÄ¼¸Ê®¸öVC¹¤³ÌÌí¼ÓÅäÌ×µÄUT¹¤³Ì£¬ĞèÒª¸²¸Çµ½Ã¿¸öÀà(¼´Ã¿¸öCPP¶¼ÒªÓĞ¶ÔÓ¦µÄTEST)¡£¼òµ¥¹Û²ìÁËÒ»ÏÂ£¬»¹ÊÇÑ¡ÓÃadd existing item to projectÌí¼Ó.cpp.hµÄ·½·¨×îÎª¼òµ¥¡£
 
-## äººè‚‰åˆ›å»º
-éªŒè¯æ­¤æ–¹æ³•æ˜¯å¦å¯è¡Œ
+## ÈËÈâ´´½¨
+ÑéÖ¤´Ë·½·¨ÊÇ·ñ¿ÉĞĞ
 
-1. æŠŠæŸå·¥ç¨‹çš„vcxprojåŠfilteræ‹·è´åˆ°UTç›®å½•
-2. æ›¿æ¢æ‰vcxprojé‡Œçš„CIinclude, resourceIncludeçš„è·¯å¾„ä¸ºç›¸å¯¹è·¯å¾„
-3. additional pathåŠ å…¥gtestå’Œgmockçš„å¤´æ–‡ä»¶åŠlib
-4. defä¹Ÿè¦æ”¹æˆç›¸å¯¹è·¯å¾„
-5. additional Include path è¦åŠ ä¸ŠåŸæœ‰å·¥ç¨‹çš„è·¯å¾„
-6. application type æ”¹ä¸º exe
-7. link-system-subsystemæ”¹ä¸ºconsole
-8. gtest gmockçš„runtime libéƒ½æ”¹ä¸º/mdd
+1. °ÑÄ³¹¤³ÌµÄvcxproj¼°filter¿½±´µ½UTÄ¿Â¼
+2. Ìæ»»µôvcxprojÀïµÄCIinclude, resourceIncludeµÄÂ·¾¶ÎªÏà¶ÔÂ·¾¶
+3. additional path¼ÓÈëgtestºÍgmockµÄÍ·ÎÄ¼ş¼°lib
+4. defÒ²Òª¸Ä³ÉÏà¶ÔÂ·¾¶
+5. additional Include path Òª¼ÓÉÏÔ­ÓĞ¹¤³ÌµÄÂ·¾¶
+6. application type ¸ÄÎª exe
+7. link-system-subsystem¸ÄÎªconsole
+8. gtest gmockµÄruntime lib¶¼¸ÄÎª/mdd
 
-#### æœç„¶å¯ä»¥
+#### ¹ûÈ»¿ÉÒÔ
 
-æ•ˆæœå¦‚å›¾
+Ğ§¹ûÈçÍ¼
 
 ![](https://github.com/CodeJuan/codejuan.github.io/raw/master/images/blog/ut_migrate/UT_gtest.png)
 
 
-## powershell è„šæœ¬
+## powershell ½Å±¾
 
-è¯´ç™½äº†å°±æ˜¯ç”¨è„šæœ¬å¤„ç†vcxproj(å…¶å®å°±xml)ï¼ŒæŠŠä¸Šæ–‡æåˆ°çš„å‡ ä¸ªæ­¥éª¤éƒ½ç”¨è„šæœ¬å®ç°ã€‚
+Ëµ°×ÁË¾ÍÊÇÓÃ½Å±¾´¦Àívcxproj(ÆäÊµ¾Íxml)£¬°ÑÉÏÎÄÌáµ½µÄ¼¸¸ö²½Öè¶¼ÓÃ½Å±¾ÊµÏÖ¡£
 
 {% highlight ps %}  
 
@@ -42,5 +42,5 @@ $xmldata.save($path.fullname)
 
 ## conclusion
 
-èŠ±äº†åŠå¤©çš„æ—¶é—´æŠŠåˆ›å»ºæ–¹æ³•åŠè„šæœ¬å†™å¥½ï¼Œçœå»Nä¸ªäººçš„é‡å¤åŠ³åŠ¨ã€‚é€šè¿‡è„šæœ¬å®ç°ï¼Œè¿˜ä¸å®¹æ˜“å‡ºé”™ã€‚
+»¨ÁË°ëÌìµÄÊ±¼ä°Ñ´´½¨·½·¨¼°½Å±¾Ğ´ºÃ£¬Ê¡È¥N¸öÈËµÄÖØ¸´ÀÍ¶¯¡£Í¨¹ı½Å±¾ÊµÏÖ£¬»¹²»ÈİÒ×³ö´í¡£
 YEAH!!
