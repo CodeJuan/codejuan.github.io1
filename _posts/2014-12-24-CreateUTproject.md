@@ -4,22 +4,44 @@ title: 一键式给VC工程创建UT工程
 comments: true
 ---
 
-# VLD简介
 
-> Visual Leak Detector is a free, robust, open-source memory leak detection system for Visual C++. 
+## 前言
+项目组要求给已有的几十个VC工程添加配套的UT工程，需要覆盖到每个类(即每个CPP都要有对应的TEST)。简单观察了一下，还是选用add existing item to project添加.cpp.h的方法最为简单。
 
-windows下VC常用开源内存泄露检测工具，代码在[codeplex](http://vld.codeplex.com/)
+## 人肉创建
+验证此方法是否可行
 
-## 原理
-代码中include了vld.h，在开始运行时构建一个VisualLeakDetector g_vld的全局变量，接管申请内存和释放内存的操作。
-此后会记录每次申请内存，并将地址及call stack存到一个set；
-释放内存时会删除set中与之相匹配的内存申请记录。
-在程序结束时，vld会遍历此set，如果set不为空，说明有内存泄露，会将泄露地址及call stack输出到report中。
+1. 把某工程的vcxproj及filter拷贝到UT目录
+2. 替换掉vcxproj里的CIinclude, resourceInclude的路径为相对路径
+3. additional path加入gtest和gmock的头文件及lib
+4. def也要改成相对路径
+5. additional Include path 要加上原有工程的路径
+6. application type 改为 exe
+7. link-system-subsystem改为console
+8. gtest gmock的runtime lib都改为/mdd
 
-## 简单用法
-0. 下载及安装，假设安装在`VldPath`
-1. 配置VC的include路径：右键-属性-directory-include directory，增加`VldPath\include`
-2. 配置lib路径：右键-属性-directory-lib directory，，增加`VldPath\lib\win32`，如果是x64的系统，那么选择win64即可。
-3. 根据需要配置vld.ini
-4. 声明
+#### 果然可以
 
+效果如图
+
+![](https://github.com/CodeJuan/codejuan.github.io/raw/master/images/blog/ut_migrate/UT_gtest.png)
+
+
+## powershell 脚本
+
+说白了就是用脚本处理vcxproj(其实就xml)，把上文提到的几个步骤都用脚本实现。
+
+{% highlight ps %}  
+
+$path= gi .\abc.xml
+$xmldata = [xml](Get-Content $path)
+$xmldata.rss.channel.title
+$xmldata.rss.channel.title="abc"
+$xmldata.save($path.fullname)
+
+{% endhighlight %}  
+
+## conclusion
+
+花了半天的时间把创建方法及脚本写好，省去N个人的重复劳动。通过脚本实现，还不容易出错。
+YEAH!!
