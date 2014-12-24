@@ -31,14 +31,12 @@ comments: true
 
 说白了就是用脚本处理vcxproj(其实就xml)，把上文提到的几个步骤都用脚本实现。
 
-{% highlight ps %}  
-
+{% highlight powershell %}  
 $path= gi .\abc.xml
 $xmldata = [xml](Get-Content $path)
 $xmldata.rss.channel.title
 $xmldata.rss.channel.title="abc"
 $xmldata.save($path.fullname)
-
 {% endhighlight %}  
 
 ## conclusion
