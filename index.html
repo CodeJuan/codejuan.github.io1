@@ -6,7 +6,7 @@ title: CodeJuan
 <div class="posts">
   {% for post in site.posts %}
     <article class="post">    
-      
+      {{ site.posts.count }}
       <h4> {{ post.date | date: "%Y-%m-%d   " }}<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
 
       <!--<div class="entry">
