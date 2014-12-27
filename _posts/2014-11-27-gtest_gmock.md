@@ -37,3 +37,6 @@ Running main() from gtest_main.cc
 [       OK ] FactorialTest.Positive (0 ms)
 [----------] 3 tests from FactorialTest (0 ms total)
 {% endhighlight %}
+
+把gtest的include拷贝到/usr/src/gtest
+lib拷贝到/usr/lib
