@@ -25,7 +25,8 @@ footer-links:
   instagram: 
   linkedin: 
   pinterest: 
-  rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
+  # rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
+  rss: rss 
   twitter: decbug
   stackoverflow: users/2763396/codejuan # your stackoverflow profile, e.g. "users/50476/bart-kiers"
 
