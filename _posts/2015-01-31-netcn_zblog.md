@@ -31,10 +31,12 @@ comments: true
 
 ![](https://raw.githubusercontent.com/CodeJuan/codejuan.github.io/master/images/blog/zblog/extract2root.png)
 
+如果不解压到根目录，也是可以的，只是访问的时候不能直接输入域名了，将会是`你的域名/你的目录`
+
 
 ## 安装ZBLOG
 
-打开http://你的网站/zb_install/default.asp(万网的免费主机要备案，如果不备案，此时的网址就输入临时域名即可，临时域名还是在站点信息查询)。
+打开http://你的域名/zb_install/default.asp(`万网的免费主机要备案，如果不备案，此时的网址就输入临时域名即可，临时域名还是在站点信息查询`)。
 
 
 ## 效果图
