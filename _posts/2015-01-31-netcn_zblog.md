@@ -15,11 +15,22 @@ comments: true
 小朋友选的是windows主机，简单搜索了一下，zblog貌似不错，好吧，就选它了，官网链接[http://www.zblogcn.com/](http://www.zblogcn.com/)，下载ASP版[http://www.zblogcn.com/zblog/](http://www.zblogcn.com/zblog/)，当前最新版的Z-Blog 2.2 Prism Build 140101。
 
 解压后会看到一个release文件夹，由于后续要将release文件夹里的文件放在主机根目录，所以还要再压缩一次，格式还必须是rar，如下图所示
+![](https://raw.githubusercontent.com/CodeJuan/codejuan.github.io/master/images/blog/zblog/zlog_rar.png)
 
 
 ## 通过FTP上传安装包
 
 把刚才压缩的rar，上传到FTP根目录，上传方法[http://help.www.net.cn/KnowledgeDetail.html?knowledgeId=5868398&categoryId=8311136](http://help.www.net.cn/KnowledgeDetail.html?knowledgeId=5868398&categoryId=8311136)
+
+
+## 解压到根目录
+
+
+![](https://raw.githubusercontent.com/CodeJuan/codejuan.github.io/master/images/blog/zblog/unzip.png)
+
+
+![](https://raw.githubusercontent.com/CodeJuan/codejuan.github.io/master/images/blog/zblog/extract2root.png)
+
 
 ## 安装ZBLOG
 
@@ -28,3 +39,6 @@ comments: true
 
 ## 效果图
 一路next，完成。效果如图
+
+
+![](https://raw.githubusercontent.com/CodeJuan/codejuan.github.io/master/images/blog/zblog/blog.png)
