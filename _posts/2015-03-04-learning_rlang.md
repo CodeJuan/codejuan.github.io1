@@ -14,15 +14,16 @@ comments: true
 3. [resouce](http://mirror.bjtu.edu.cn/cran/sources.html) , current version is [R-3.1.2](http://mirror.bjtu.edu.cn/cran/src/base/R-3/R-3.1.2.tar.gz)
 
 4. extract
-    ```
+    {% highlight sh %}
     sudo tar xf r-3.1.2.tar.gz -C extract/
     cd extract
-    ```
-5.  build document
+    {% endhighlight %}
+
+5.  view the build document
     
-    ```
+    {% highlight sh %}
     vim INSTALL
-    ```
+    {% endhighlight %}
 
 6.  `./configure`,  *error: No F77 compiler found*
 
