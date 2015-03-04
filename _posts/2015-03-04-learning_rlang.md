@@ -19,12 +19,12 @@ comments: true
     cd extract
     {% endhighlight %}
 
-5.  view the build document
-    {% highlight sh %}
-    vim INSTALL
-    {% endhighlight %}
+5. view the build document
+   {% highlight sh %}
+   vim INSTALL
+   {% endhighlight %}
 
-6.  `./configure`,  *error: No F77 compiler found*。[学自这里http://laymantech.blogbus.com/logs/80761679.html](http://laymantech.blogbus.com/logs/80761679.html)
+6. `./configure`,  *error: No F77 compiler found*。[学自这里http://laymantech.blogbus.com/logs/80761679.html](http://laymantech.blogbus.com/logs/80761679.html)
 
 	>会产生错误：configure: error: No F77 compiler found
 	R语言需要fortran compiler，也就是说， 在上面尝试寻找了若干种Fortran 编译器未果之后，提示你没有安装任何一种可以使用的fortran 77 编译器。随便装个gfortran就行了。
