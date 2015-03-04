@@ -19,10 +19,7 @@ comments: true
     cd extract
     {% endhighlight %}
 
-5. view the build document
-   {% highlight sh %}
-   vim INSTALL
-   {% endhighlight %}
+5. view the build document,`vim INSTALL`
 
 6. `./configure`,  *error: No F77 compiler found*。[学自这里http://laymantech.blogbus.com/logs/80761679.html](http://laymantech.blogbus.com/logs/80761679.html)
 
