@@ -56,4 +56,16 @@ comments: true
 	 这是缺少生成相应格式manuals的插件，如果有需要可以依次安装。
 
 
-7. sudo make
+7. sudo make，安装完毕。
+
+# 简单试用
+
+### 
+cd 到bin，sudo ./R，进入R控制台
+按照http://developer.51cto.com/art/201305/393121.htm试用一下
+```
+install.packages('quantmod') # 安装quantmod包 ，
+```
+会提示选择哪个镜像，19号beijing离我最近，于是输入19
+
+q()是退出
