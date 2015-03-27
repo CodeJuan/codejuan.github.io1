@@ -38,5 +38,20 @@ Running main() from gtest_main.cc
 [----------] 3 tests from FactorialTest (0 ms total)
 {% endhighlight %}
 
-把gtest的include拷贝到/usr/src/gtest
-lib拷贝到/usr/lib
+接下来就是怎么链接到我们的工程，makefile如下:
+
+{% highlight makefile %}
+PPFLAGS += -isystem $(GTEST_DIR)/include 
+CXXFLAGS += -g -Wall -Wextra -pthread 
+TESTS = test 
+
+#将gtest加入到include
+GTEST_HEADERS = ../include
+#引入静态库
+LIB_DIR = ../lib/gtest_main.a
+test :   
+	g++ $(CPPFLAGS) $(CXXFLAGS) -lpthread -I $(GTEST_HEADERS) $(LIB_DIR) test.cpp   -o test 
+clean : 
+	rm -f test
+
+{% endhighlight %}
