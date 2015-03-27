@@ -49,3 +49,44 @@ perf功能很强大，而且被收录到内核(2.6.31)，可以记录page fault�
 继续搜索'Profiling shared library'，找到sprof。看了下简介，大概能满足需求，先拿来用用。
 
 首先创建一个so，里边写一段比较耗时的代码
+
+{% highlight cpp %}
+#include "lib.h"
+#include <unistd.h>
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void A::work(void)
+{
+	int a = 0;
+	int b = 0;
+	vector<int> v;
+	while(a < 10)
+	{
+		b += a;
+		++a;
+		v.push_back(a);
+		sleep(1);
+	}
+	cout << "work" << endl;
+	return;
+}
+{% endhighlight %}
+
+
+{% highlight makefile %}
+ll : libso
+	g++ -L ./ -Wall -o test main.cpp -llib
+
+libso : libo
+	g++ -shared -o liblib.so liblib.o
+
+libo : lib.cpp
+	g++ -Wall -Werror -fpic -c lib.cpp -o liblib.o
+
+clean:
+	rm -f test
+
+# export LD_LIBRARY_PATH=/home/username/foo:$LD_LIBRARY_PATH
+{% endhighlight %}
