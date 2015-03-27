@@ -90,3 +90,17 @@ clean:
 
 # export LD_LIBRARY_PATH=/home/username/foo:$LD_LIBRARY_PATH
 {% endhighlight %}
+
+
+{% highlight sh %}
+#set the environment variable LD_PROFILE to the name of the shared obj
+export LD_PROFILE=my_obj
+#run your application
+my_app
+#this should create a file /var/tmp/my_sobj.profile
+#now run sprof
+sprof my_sobj my_sobj.profile
+{% endhighlight %}
+
+
+
