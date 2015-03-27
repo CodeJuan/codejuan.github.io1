@@ -47,3 +47,5 @@ perf功能很强大，而且被收录到内核(2.6.31)，可以记录page fault�
 #### sprof
 
 继续搜索'Profiling shared library'，找到sprof。看了下简介，大概能满足需求，先拿来用用。
+
+首先创建一个so，里边写一段比较耗时的代码
