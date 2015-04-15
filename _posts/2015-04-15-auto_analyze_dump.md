@@ -36,12 +36,14 @@ start-process windbg.exe -z "dump file 路径"
 ### initial command -c
 
 `-c command`可以给windbg设置启动后的初始命令。
+
 - Specifies the initial debugger command to run at start-up. 
 - Multiple commands can be separated with semicolons.
 
 既然可以设置命令，那么就可以抛弃powershell发键盘消息的方式了，直接写个batch搞定。
 
 脚本
+
 {% highlight batch %}
 "安装目录\windbg.exe" -z "dump file 路径" -c "!analyze -v"
 {% endhighlight %}
@@ -52,11 +54,13 @@ start-process windbg.exe -z "dump file 路径"
 有时候需要保存log，以前的做法是选中windbg的output，然后CTRL+C，CTRL+V到一个文本里。多次键盘鼠标操作，太麻烦，看看能否有命令行可以实现。
 
 找到一个`-log{o|a} LogFile`
+
 - Begins logging information to a log file. 
 - If the specified log file already exists, it will be overwritten if -logo is used. 
 - If loga is used, the output will be appended to the file. For more details, see Keeping a Log File.
 
 脚本升级为
+
 {% highlight batch %}
 "安装目录\windbg.exe" -z "dump file 路径" -c "!analyze -v" -logo "dump file 路径.log"
 {% endhighlight %}
@@ -65,5 +69,7 @@ start-process windbg.exe -z "dump file 路径"
 ## 效果
 
 每人每天分析3次dump，每次敲命令+拷贝log需要花1~3分钟的时间，团队里共有150个开发，一天就能节省150人*3次*2分钟=900分钟。
+
 很可观的收益啊，不由得老怀大慰。
+
 程序员就是要从机械繁琐的工作中超脱出来，投入到更有意义的事情上去。
