@@ -16,6 +16,8 @@ comments: true
 
 当系统的性能不能满足要求的时候，便要对其进行调优。方法有千千万万种，但无论如何，我们都要想办法精确识别到瓶颈，然后有的放矢进行优化。如何精确识别呢？这个时候profiler就闪亮登场了。
 
+*尝试了很多profiler之后，最终还是决定使用google perf tools*
+
 ### linux常用profiler
 
 gprofile & perf & sprof
@@ -103,4 +105,4 @@ sprof my_sobj my_sobj.profile
 {% endhighlight %}
 
 
-
+查了一下，sprof只能采集可执行文件的性能，无法采集so的，还是需要放弃。
