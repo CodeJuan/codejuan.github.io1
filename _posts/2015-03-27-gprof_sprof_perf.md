@@ -4,6 +4,8 @@ title: Linux C++性能调优笔记
 comments: true
 ---
 
+
+
 ## 前言
 
 上周领导在群里问谁会linux C开发，我曾在业余时间自己捣鼓过，于是回答略懂。这周就被派到别的项目组紧急支援开发。大体工作是开发一个so供前台调用，开发过程中对makefile、跨平台的理解越发深刻了。相比于自娱自乐，正规开发更能涨知识。
@@ -20,7 +22,7 @@ comments: true
 
 gprofile & perf & sprof
 
-#尝试了很多profiler之后，最终还是决定使用google perf tools#。
+*尝试了很多profiler之后，最终还是决定使用google perf tools*
 
 #### gprofile
 
