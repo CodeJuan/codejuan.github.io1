@@ -106,3 +106,85 @@ sprof my_sobj my_sobj.profile
 
 
 查了一下，sprof只能采集可执行文件的性能，无法采集so的，还是需要放弃。
+
+
+
+### gperf-tools
+
+内网的文章带不出来，只能简单回忆，记录一下。
+继续折腾之下，找到了google-perf-tools，功能很强大，可以采集so的性能，还能采集内存。
+
+决定结合gtest，用采用单元测试来测性能内存。
+
+#### 为什么要用单元测试呢？
+
+
+1. 以前的做法比较麻烦。需要运行服务，然后kill平台进程等一系列操作。
+
+2. 方便。项目已有单元测试框架，可以根据我们的需要自由组合场景，对外部环境依赖较小。
+
+3. 运行快，几分钟就能看到结果。及时反馈，人脑在不断反馈的刺激下，会更专注。
+
+4. 如果使用得当，可能做到自动化。
+
+#### 安装libunwind
+
+
+
+#### 安装gperftools
+
+
+
+#### 设置环境变量
+
+
+
+CPUPROFILE; exprot
+
+
+
+
+#### enable单元测试
+
+
+
+
+#### 改makefile
+
+在单元测试可执行文件tester的makefile和我们so的makefile加上
+
+
+
+{% highlight makefile %}
+
+CXXFLAGS += -g
+
+LIBRARY += profiler
+
+{% endhighlight %}
+
+
+
+然后make
+
+#### 写测试代码
+
+
+1. 增加一个TEST，执行需要测性能的代码
+
+2. 在setup里加上profilerStart
+
+3. 在teardown加上profilerstop
+
+
+
+#### 运行，然后分析结果
+
+
+
+用 pprof --text (PATH OF TESTER) (CPUPROFILER执行的log)，得到文本格式的分析，包括每个函数的时间占有比例
+
+
+
+用 pprof --callgrind可以生成图形化，很炫目。
+
