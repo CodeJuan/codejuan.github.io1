@@ -23,3 +23,44 @@ comments: true
 
 ## 简介
 当用户面临程序稳定性及性能问题（如崩溃、挂死、不明觉厉的高内存占用）时，最佳补救措施就是在第一时间分析此程序的进程。不过，某些应用服务（如 IIS、Exchange、SQL Server、COM+、Biztalk）在运行出错和重启时，并没有提供UI信息，这样就增加了troubleshooting的难度。
+
+```cpp
+#include "lib.h"
+#include <unistd.h>
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void A::work(void)
+{
+	int a = 0;
+	int b = 0;
+	vector<int> v;
+	while(a < 10)
+	{
+		b += a;
+		++a;
+		v.push_back(a);
+		sleep(1);
+	}
+	cout << "work" << endl;
+	return;
+}
+```
+
+```makefile
+ll : libso
+	g++ -L ./ -Wall -o test main.cpp -llib
+
+libso : libo
+	g++ -shared -o liblib.so liblib.o
+
+libo : lib.cpp
+	g++ -Wall -Werror -fpic -c lib.cpp -o liblib.o
+
+clean:
+	rm -f test
+
+# export LD_LIBRARY_PATH=/home/username/foo:$LD_LIBRARY_PATH
+```
+
