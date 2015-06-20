@@ -50,12 +50,19 @@ baseurl: ""
 # !! You don't need to change any of the configuration flags below !!
 #
 
-markdown: kramdown
-kramdown:
-  input:         GFM
-  auto_ids:      true
+#markdown: kramdown
+#kramdown:
+#  input:         GFM
+#  auto_ids:      true
 #  auto_id_prefix:'id-'
-
+markdown: redcarpet
+redcarpet:
+  extensions:
+    - fenced_code_blocks
+    - no_intra_emphasis
+    - strikethrough
+    - autolink
+    - tables
 highlighter: pygments
 permalink: /:title/
 
