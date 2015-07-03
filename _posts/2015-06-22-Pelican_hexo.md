@@ -1,6 +1,6 @@
 ---
 layout: post
-title: pelican & hexo
+title: pelican&hexo
 comments: true
 ---
 
@@ -12,24 +12,26 @@ comments: true
 ### easy_install
 [https://pypi.python.org/pypi/setuptools](https://pypi.python.org/pypi/setuptools)
 [https://bootstrap.pypa.io/ez_setup.py](https://bootstrap.pypa.io/ez_setup.py)
-```batch
+``` batch
 E:\Python27\python.exe ez_setup.py
 ```
 
 ### pip
-easy_install pip ÌáÊ¾ÕÒ²»µ½ÃüÁî
-ÉèÖÃ»·¾³±äÁ¿ E:\Python27;E:\Python27\Scripts
-ÆäÊµĞÂ°æµÄpython¶¼×Ô´øÁËpip£¬ÎŞĞè°²×°
+easy_install pip æç¤ºæ‰¾ä¸åˆ°å‘½ä»¤
+è®¾ç½®ç¯å¢ƒå˜é‡ E:\Python27;E:\Python27\Scripts
+å…¶å®æ–°ç‰ˆçš„pythonéƒ½è‡ªå¸¦äº†pipï¼Œæ— éœ€å®‰è£…
 
 ### make
-http://pan.baidu.com/s/1hqzJBBe
-½âÑ¹µ½pythonÄ¿Â¼
+[http://pan.baidu.com/s/1hqzJBBe](http://pan.baidu.com/s/1hqzJBBe)
+è§£å‹åˆ°pythonç›®å½•
 
 ### pelican
+``` batch
 pip install pelican
+```
 
 ### markdown
-```batch
+``` batch
 pip install markdown
 ```
 
@@ -38,16 +40,16 @@ pip install markdown
 timezone Asia/Shanghai
 
 ### run
-```batch
+``` batch
 pelican content
 cd ~/projects/yoursite/output
 python -m pelican.server
 ```
 
 ### themes
-ÏÂÔØthemes
+ä¸‹è½½themes
 ``` batch
-pelican theme -i "ÄãÏ²»¶µÄÖ÷Ìâ"
+pelican theme -i "ä½ å–œæ¬¢çš„ä¸»é¢˜"
 ```
 
 # hexo
