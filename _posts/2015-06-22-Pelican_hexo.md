@@ -22,7 +22,6 @@ easy_install pip 提示找不到命令
 其实新版的python都自带了pip，无需安装
 
 ### make
-~~http://download.csdn.net/download/denygjgod/6271683~~
 http://pan.baidu.com/s/1hqzJBBe
 解压到python目录
 
@@ -43,6 +42,7 @@ timezone Asia/Shanghai
 pelican content
 cd ~/projects/yoursite/output
 python -m pelican.server
+```
 
 ### themes
 下载themes
