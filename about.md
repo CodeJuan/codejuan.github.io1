@@ -16,6 +16,8 @@ permalink: /about/
 
 ### Contact me
 
+[不是简历，只是自我描述](http://codejuan.github.io/resume/)
+
 [github](https://github.com/CodeJuan)
 
 [stackoverflow](http://stackoverflow.com/users/2763396/codejuan)
